@@ -19,6 +19,8 @@ namespace Evaluacion4_Programación_1
         public Form1()
         {
             InitializeComponent();
+
+            dg.DataSource = Lista.DT;
         }
 
         private void btCargar_Click(object sender, EventArgs e)
@@ -44,11 +46,7 @@ namespace Evaluacion4_Programación_1
             }
             else
             {
-                btMostrar_Click(null, null);
-                txtNombreMusculo.Text = "";
-                txtNúmeroAlumno.Text = "";
-                txtNombreMusculo.Focus();
-                
+                Limpiar();
             }
             ana = new Anatomia();
         }
@@ -77,6 +75,7 @@ namespace Evaluacion4_Programación_1
                 txtNúmeroAlumno.Text = ana.AlumnoSeleccionadoLista.ToString();
 
                 txtNombreMusculo.Focus();
+                txtCódigo.Text = "";
             }
             else
             {
@@ -85,6 +84,27 @@ namespace Evaluacion4_Programación_1
                 txtCódigo.SelectAll();
             }
            
+        }
+
+        private void btBorrar_Click(object sender, EventArgs e)
+        {
+            if (!Lista.DeleteMuscle(ana))
+            {
+                Limpiar();
+            }
+            else
+            {
+                lblLista.Text = "El registro " + ana.Musculos + "No se pudo borrar";
+                Limpiar();
+            }
+            ana = new Anatomia();
+        }
+        private void Limpiar()
+        {
+            btMostrar_Click(null, null);
+            txtNombreMusculo.Text = "";
+            txtNúmeroAlumno.Text = "";
+            txtNombreMusculo.Focus();
         }
 
         //private void Redimencionar()

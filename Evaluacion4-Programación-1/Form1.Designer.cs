@@ -41,6 +41,8 @@ namespace Evaluacion4_Programación_1
             this.txtCódigo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btBorrar = new System.Windows.Forms.Button();
+            this.dg = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
             this.SuspendLayout();
             // 
             // btCargar
@@ -74,7 +76,7 @@ namespace Evaluacion4_Programación_1
             // 
             this.lblLista.AutoSize = true;
             this.lblLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLista.Location = new System.Drawing.Point(74, 123);
+            this.lblLista.Location = new System.Drawing.Point(12, 414);
             this.lblLista.Name = "lblLista";
             this.lblLista.Size = new System.Drawing.Size(43, 17);
             this.lblLista.TabIndex = 3;
@@ -154,12 +156,22 @@ namespace Evaluacion4_Programación_1
             this.btBorrar.TabIndex = 11;
             this.btBorrar.Text = "Borrar";
             this.btBorrar.UseVisualStyleBackColor = true;
+            this.btBorrar.Click += new System.EventHandler(this.btBorrar_Click);
+            // 
+            // dg
+            // 
+            this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg.Location = new System.Drawing.Point(149, 199);
+            this.dg.Name = "dg";
+            this.dg.Size = new System.Drawing.Size(240, 150);
+            this.dg.TabIndex = 12;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dg);
             this.Controls.Add(this.btBorrar);
             this.Controls.Add(this.txtCódigo);
             this.Controls.Add(this.label3);
@@ -174,6 +186,7 @@ namespace Evaluacion4_Programación_1
             this.Controls.Add(this.btCargar);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,6 +206,7 @@ namespace Evaluacion4_Programación_1
         private System.Windows.Forms.TextBox txtCódigo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btBorrar;
+        private System.Windows.Forms.DataGridView dg;
     }
 }
 
