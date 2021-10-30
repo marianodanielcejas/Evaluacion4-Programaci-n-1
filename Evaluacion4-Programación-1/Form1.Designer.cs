@@ -161,9 +161,9 @@ namespace Evaluacion4_Programación_1
             // dg
             // 
             this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg.Location = new System.Drawing.Point(149, 199);
+            this.dg.Location = new System.Drawing.Point(82, 196);
             this.dg.Name = "dg";
-            this.dg.Size = new System.Drawing.Size(240, 150);
+            this.dg.Size = new System.Drawing.Size(349, 150);
             this.dg.TabIndex = 12;
             // 
             // Form1

@@ -22,6 +22,7 @@ namespace Evaluacion4_Programación_1
             DT.Columns.Add("id");
             DT.Columns.Add("Musculos");
             DT.Columns.Add("AlumnoSeleccionadoLista");
+
             LeerDT_DeArchivo();
         }
         public void LeerDT_DeArchivo()
@@ -30,6 +31,15 @@ namespace Evaluacion4_Programación_1
             {
                 DT.Clear();
                 DT.ReadXml("Lista.xml");
+                UltimoCodigo = 0;
+
+                for(int i = 0; i < DT.Rows.Count; i++)
+                {
+                    if(Convert.ToInt32(DT.Rows[i]["Id"])> UltimoCodigo)
+                    {
+                        UltimoCodigo = Convert.ToInt32(DT.Rows[i]["Id"]);
+                    }
+                }
             }
         }
 
@@ -47,7 +57,14 @@ namespace Evaluacion4_Programación_1
                 {
                     UltimoCodigo = UltimoCodigo + 1;
                     anatomia.Id = UltimoCodigo;
-                    
+
+                    DT.Rows.Add();
+                    int NumeroRegistroNuevo = DT.Rows.Count - 1;
+                    DT.Rows[NumeroRegistroNuevo]["Id"] = anatomia.Id.ToString();
+                    DT.Rows[NumeroRegistroNuevo]["Musculos"] = anatomia.Musculos.ToString();
+                    DT.Rows[NumeroRegistroNuevo]["AlumnoSeleccionadoLista"] = anatomia.AlumnoSeleccionadoLista.ToString();
+
+                    DT.WriteXml("Lista.xml");
                 }
                 else
                 {
@@ -96,13 +113,13 @@ namespace Evaluacion4_Programación_1
         public override string ToString()
         {
             string Resp = "Lista:\r\n"; ;
-            foreach (Anatomia item in Muscles)
-            {
-                Resp = Resp
-                    + item.Id.ToString() + " - "
-                    + item.AlumnoSeleccionadoLista.ToString()
-                    + " - " + item.Musculos + "\r\n";
-            }
+            //foreach (Anatomia item in Muscles)
+            //{
+            //  Resp = Resp
+            //    + item.Id.ToString() + " - "
+            //  + item.AlumnoSeleccionadoLista.ToString()
+            //+ " - " + item.Musculos + "\r\n";
+            //}
             return Resp;
         }
         //Metodo para filtrar por año minimo.
