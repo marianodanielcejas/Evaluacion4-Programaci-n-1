@@ -68,13 +68,16 @@ namespace Evaluacion4_Programación_1
                 }
                 else
                 {
-                    for (int i = 0; i < Muscles.Length; i++)
+                    
+                    for (int i = 0; i < DT.Rows.Count; i++)
                     {
-                        if (Muscles[i].Id == anatomia.Id)
+                        if (Convert.ToInt32(DT.Rows[i]["Id"]) == anatomia.Id)
                         {
-                            Muscles[i] = anatomia;
+                            DT.Rows[i]["Musculos"] = anatomia.Musculos;
+                            DT.Rows[i]["AlumnoSeleccionadoLista"] = anatomia.AlumnoSeleccionadoLista.ToString();
                             break;
                         }
+                        
                     }
                 }
             }
@@ -139,18 +142,18 @@ namespace Evaluacion4_Programación_1
             return Resp;
         }
 
-        public Anatomia BuscarCodigo(int Id)
+        public Anatomia BuscarCodigo(int id)
         {
             Anatomia res = new Anatomia();
-            foreach (Anatomia item in Muscles)
-            {
-                if(item.Id == Id)
-                {
-                    res = item;
-                    break;
-                }
-            }
+            DT.Select("Id=" + id.ToString());
+            DataRow[] fila = DT.Select("Id=" + id.ToString());
 
+
+            var idencontrado = fila[0][0];
+
+            res.Id = Convert.ToInt32(fila[0]["Id"]);
+            res.Musculos = (fila[0]["Musculos"].ToString());
+            res.AlumnoSeleccionadoLista = Convert.ToInt32(fila[0]["AlumnoSeleccionadoLista"]);
             return res;
         }
         
@@ -158,14 +161,24 @@ namespace Evaluacion4_Programación_1
         public bool DeleteMuscle(Anatomia anatomia)
         {
             bool resp = false;
-            for (int i = 0; i < Muscles.Length; i++)
+
+            for (int i = 0; i < DT.Rows.Count; i++)
             {
-                if (Muscles[i].Id == anatomia.Id)
+                if (Convert.ToInt32(DT.Rows[i]["Id"]) == anatomia.Id)
                 {
-                    EliminarRegistro(i);
+                    DT.Rows[i].Delete();
                     break;
                 }
+
             }
+            //for (int i = 0; i < Muscles.Length; i++)
+            //{
+            //   if (Muscles[i].Id == anatomia.Id)
+            //    {
+            //      EliminarRegistro(i);
+            //      break;
+            //  }
+            //}
             return resp;
         }
     }
