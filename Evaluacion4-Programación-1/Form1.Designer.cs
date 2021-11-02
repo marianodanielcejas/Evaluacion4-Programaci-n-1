@@ -33,10 +33,8 @@ namespace Evaluacion4_Programación_1
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombreMusculo = new System.Windows.Forms.TextBox();
             this.lblLista = new System.Windows.Forms.Label();
-            this.btMostrar = new System.Windows.Forms.Button();
             this.txtNúmeroAlumno = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btFiltro = new System.Windows.Forms.Button();
             this.btBuscar = new System.Windows.Forms.Button();
             this.txtCódigo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -78,20 +76,8 @@ namespace Evaluacion4_Programación_1
             this.lblLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLista.Location = new System.Drawing.Point(12, 414);
             this.lblLista.Name = "lblLista";
-            this.lblLista.Size = new System.Drawing.Size(43, 17);
+            this.lblLista.Size = new System.Drawing.Size(0, 17);
             this.lblLista.TabIndex = 3;
-            this.lblLista.Text = "Lista";
-            // 
-            // btMostrar
-            // 
-            this.btMostrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btMostrar.Location = new System.Drawing.Point(461, 149);
-            this.btMostrar.Name = "btMostrar";
-            this.btMostrar.Size = new System.Drawing.Size(75, 29);
-            this.btMostrar.TabIndex = 4;
-            this.btMostrar.Text = "Mostrar";
-            this.btMostrar.UseVisualStyleBackColor = true;
-            this.btMostrar.Click += new System.EventHandler(this.btMostrar_Click);
             // 
             // txtNúmeroAlumno
             // 
@@ -108,17 +94,6 @@ namespace Evaluacion4_Programación_1
             this.label2.Size = new System.Drawing.Size(79, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "NúmeroAlumno";
-            // 
-            // btFiltro
-            // 
-            this.btFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btFiltro.Location = new System.Drawing.Point(552, 149);
-            this.btFiltro.Name = "btFiltro";
-            this.btFiltro.Size = new System.Drawing.Size(128, 29);
-            this.btFiltro.TabIndex = 7;
-            this.btFiltro.Text = "Mostrar Con Filtro";
-            this.btFiltro.UseVisualStyleBackColor = true;
-            this.btFiltro.Click += new System.EventHandler(this.btFiltro_Click);
             // 
             // btBuscar
             // 
@@ -161,9 +136,9 @@ namespace Evaluacion4_Programación_1
             // dg
             // 
             this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg.Location = new System.Drawing.Point(82, 196);
+            this.dg.Location = new System.Drawing.Point(57, 175);
             this.dg.Name = "dg";
-            this.dg.Size = new System.Drawing.Size(349, 150);
+            this.dg.Size = new System.Drawing.Size(386, 181);
             this.dg.TabIndex = 12;
             // 
             // Form1
@@ -176,10 +151,8 @@ namespace Evaluacion4_Programación_1
             this.Controls.Add(this.txtCódigo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btBuscar);
-            this.Controls.Add(this.btFiltro);
             this.Controls.Add(this.txtNúmeroAlumno);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btMostrar);
             this.Controls.Add(this.lblLista);
             this.Controls.Add(this.txtNombreMusculo);
             this.Controls.Add(this.label1);
@@ -198,10 +171,8 @@ namespace Evaluacion4_Programación_1
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNombreMusculo;
         private System.Windows.Forms.Label lblLista;
-        private System.Windows.Forms.Button btMostrar;
         private System.Windows.Forms.TextBox txtNúmeroAlumno;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btFiltro;
         private System.Windows.Forms.Button btBuscar;
         private System.Windows.Forms.TextBox txtCódigo;
         private System.Windows.Forms.Label label3;

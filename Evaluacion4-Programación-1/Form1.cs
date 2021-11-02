@@ -51,21 +51,6 @@ namespace Evaluacion4_Programación_1
             ana = new Anatomia();
         }
 
-        private void btMostrar_Click(object sender, EventArgs e)
-        {
-            //lblLista.Text = "Lista:\r\n";
-            //foreach (Anatomia item in Lista.Muscles)
-            //{
-            //lblLista.Text = lblLista.Text + item.AlumnoSeleccionadoLista.ToString() + item.Musculos + "\r\n";
-            lblLista.Text = Lista.ToString();
-            
-        }
-
-        private void btFiltro_Click(object sender, EventArgs e)
-        {
-            lblLista.Text = Lista.ToStringFiltrado(0);
-        }
-
         private void btBuscar_Click(object sender, EventArgs e)
         {
             ana = Lista.BuscarCodigo(Convert.ToInt32(txtCódigo.Text));
@@ -88,7 +73,7 @@ namespace Evaluacion4_Programación_1
 
         private void btBorrar_Click(object sender, EventArgs e)
         {
-            if (!Lista.DeleteMuscle(ana))
+            if (Lista.DeleteMuscle(ana))
             {
                 Limpiar();
             }
@@ -101,27 +86,11 @@ namespace Evaluacion4_Programación_1
         }
         private void Limpiar()
         {
-            btMostrar_Click(null, null);
             txtNombreMusculo.Text = "";
             txtNúmeroAlumno.Text = "";
             txtNombreMusculo.Focus();
+            lblLista.Text = "";
         }
 
-        //private void Redimencionar()
-        //{
-        //if (Muscles == null)
-        //{
-        //Muscles = new Anatomia [1];
-        //}
-        //else
-        //{
-        //Anatomia[] Arraux = new Anatomia[Muscles.Length + 1];
-        //for (int i = 0; i < Muscles.Length; i++)
-        //{
-        //Arraux[i] = Muscles[i];
-        //}
-        //Muscles = Arraux;
-        //}
-        //}
     }
 }

@@ -9,10 +9,6 @@ namespace Evaluacion4_Programación_1
 {
     public class ListaAlumnos
     {
-        //Lista Musculos.
-        public Anatomia[] Muscles { get; set; }
-        //Metodo: Último codigo que voy a dar cuando quiera generar un nuevo músculo.
-
         public DataTable DT { get; set; } = new DataTable();
         public int UltimoCodigo { get; set; } = 0;
 
@@ -75,6 +71,7 @@ namespace Evaluacion4_Programación_1
                         {
                             DT.Rows[i]["Musculos"] = anatomia.Musculos;
                             DT.Rows[i]["AlumnoSeleccionadoLista"] = anatomia.AlumnoSeleccionadoLista.ToString();
+                            DT.WriteXml("Lista.xml");
                             break;
                         }
                         
@@ -83,77 +80,24 @@ namespace Evaluacion4_Programación_1
             }
             return resp;
         }
-        public void Redimencionar()
-        {
-            if (Muscles == null)
-            {
-                Muscles = new Anatomia[1];
-            }
-            else
-            {
-                Anatomia[] Arraux = new Anatomia[Muscles.Length + 1];
-                for (int i = 0; i < Muscles.Length; i++)
-                {
-                    Arraux[i] = Muscles[i];
-                }
-                Muscles = Arraux;
-            }
-        }
         //Metodo para convertir a string.
-        public void EliminarRegistro(int posicion)
-        {
-            for (int i = posicion; i < Muscles.Length - 1; i++)
-            {
-                Muscles[i] = Muscles[i + 1];
-            }
-            Anatomia[] Arraux = new Anatomia[Muscles.Length - 1];
-            for (int i = 0; i < Muscles.Length - 1; i++)
-            {
-                Arraux[i] = Muscles[i];
-            }
-            Muscles = Arraux;
-        }
-        public override string ToString()
-        {
-            string Resp = "Lista:\r\n"; ;
-            //foreach (Anatomia item in Muscles)
-            //{
-            //  Resp = Resp
-            //    + item.Id.ToString() + " - "
-            //  + item.AlumnoSeleccionadoLista.ToString()
-            //+ " - " + item.Musculos + "\r\n";
-            //}
-            return Resp;
-        }
         //Metodo para filtrar por año minimo.
-        public string ToStringFiltrado(int NMinimo)
-        {
-            string Resp = "Lista:\r\n";
-            foreach (Anatomia item in Muscles)
-            {
-                if (item.AlumnoSeleccionadoLista >= NMinimo)
-                {
-                    Resp = Resp
-                   + item.Id.ToString() + " - "
-                   + item.AlumnoSeleccionadoLista.ToString()
-                   + " - " + item.Musculos + "\r\n";
-                }
-            }
-            return Resp;
-        }
+        
 
         public Anatomia BuscarCodigo(int id)
         {
             Anatomia res = new Anatomia();
-            DT.Select("Id=" + id.ToString());
-            DataRow[] fila = DT.Select("Id=" + id.ToString());
+            for (int i = 0; i < DT.Rows.Count; i++)
+            {
+                if (Convert.ToInt32(DT.Rows[i]["Id"]) == id)
+                {
+                    res.Id = Convert.ToInt32(DT.Rows[i]["Id"]);
+                    res.Musculos = (DT.Rows[i]["Musculos"].ToString());
+                    res.AlumnoSeleccionadoLista = Convert.ToInt32(DT.Rows[i]["AlumnoSeleccionadoLista"]);
+                    break;
+                }
 
-
-            var idencontrado = fila[0][0];
-
-            res.Id = Convert.ToInt32(fila[0]["Id"]);
-            res.Musculos = (fila[0]["Musculos"].ToString());
-            res.AlumnoSeleccionadoLista = Convert.ToInt32(fila[0]["AlumnoSeleccionadoLista"]);
+            }
             return res;
         }
         
@@ -167,6 +111,8 @@ namespace Evaluacion4_Programación_1
                 if (Convert.ToInt32(DT.Rows[i]["Id"]) == anatomia.Id)
                 {
                     DT.Rows[i].Delete();
+                    DT.WriteXml("Lista.xml");
+                    resp = true;
                     break;
                 }
 
