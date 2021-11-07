@@ -28,6 +28,7 @@ namespace Evaluacion4_Programación_1
             
             ana.Musculos = txtNombreMusculo.Text;
             ana.AlumnoSeleccionadoLista = Convert.ToInt32(txtNúmeroAlumno.Text);
+            ana.CondiciónAlumno = txtCondiciónAlumno.Text;
             
             
 
@@ -52,6 +53,7 @@ namespace Evaluacion4_Programación_1
             {
                 txtNombreMusculo.Text = ana.Musculos;
                 txtNúmeroAlumno.Text = ana.AlumnoSeleccionadoLista.ToString();
+                txtCondiciónAlumno.Text = ana.CondiciónAlumno;
 
                 txtNombreMusculo.Focus();
                 txtCódigo.Text = "";
@@ -82,6 +84,7 @@ namespace Evaluacion4_Programación_1
         {
             txtNombreMusculo.Text = "";
             txtNúmeroAlumno.Text = "";
+            txtCondiciónAlumno.Text = "";
             txtNombreMusculo.Focus();
             lblLista.Text = "";
         }

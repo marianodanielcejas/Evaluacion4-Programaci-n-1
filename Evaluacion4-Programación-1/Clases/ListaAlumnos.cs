@@ -18,6 +18,7 @@ namespace Evaluacion4_Programación_1
             DT.Columns.Add("id");
             DT.Columns.Add("Musculos");
             DT.Columns.Add("AlumnoSeleccionadoLista");
+            DT.Columns.Add("CondiciónAlumno");
 
             LeerDT_DeArchivo();
         }
@@ -59,6 +60,7 @@ namespace Evaluacion4_Programación_1
                     DT.Rows[NumeroRegistroNuevo]["Id"] = anatomia.Id.ToString();
                     DT.Rows[NumeroRegistroNuevo]["Musculos"] = anatomia.Musculos.ToString();
                     DT.Rows[NumeroRegistroNuevo]["AlumnoSeleccionadoLista"] = anatomia.AlumnoSeleccionadoLista.ToString();
+                    DT.Rows[NumeroRegistroNuevo]["CondiciónAlumno"] = anatomia.CondiciónAlumno.ToString();
 
                     DT.WriteXml("Lista.xml");
                 }
@@ -71,6 +73,7 @@ namespace Evaluacion4_Programación_1
                         {
                             DT.Rows[i]["Musculos"] = anatomia.Musculos;
                             DT.Rows[i]["AlumnoSeleccionadoLista"] = anatomia.AlumnoSeleccionadoLista.ToString();
+                            DT.Rows[i]["CondiciónAlumno"] = anatomia.CondiciónAlumno;
                             DT.WriteXml("Lista.xml");
                             break;
                         }
@@ -93,6 +96,7 @@ namespace Evaluacion4_Programación_1
                     res.Id = Convert.ToInt32(DT.Rows[i]["Id"]);
                     res.Musculos = (DT.Rows[i]["Musculos"].ToString());
                     res.AlumnoSeleccionadoLista = Convert.ToInt32(DT.Rows[i]["AlumnoSeleccionadoLista"]);
+                    res.CondiciónAlumno = (DT.Rows[i]["CondiciónAlumno"].ToString());
                     break;
                 }
 

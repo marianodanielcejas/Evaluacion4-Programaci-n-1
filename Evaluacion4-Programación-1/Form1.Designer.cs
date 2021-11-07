@@ -37,16 +37,17 @@ namespace Evaluacion4_Programación_1
             this.label2 = new System.Windows.Forms.Label();
             this.btBuscar = new System.Windows.Forms.Button();
             this.txtCódigo = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.btBorrar = new System.Windows.Forms.Button();
             this.dg = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtCondiciónAlumno = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
             this.SuspendLayout();
             // 
             // btCargar
             // 
             this.btCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCargar.Location = new System.Drawing.Point(461, 83);
+            this.btCargar.Location = new System.Drawing.Point(539, 117);
             this.btCargar.Name = "btCargar";
             this.btCargar.Size = new System.Drawing.Size(75, 29);
             this.btCargar.TabIndex = 3;
@@ -57,7 +58,7 @@ namespace Evaluacion4_Programación_1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(146, 55);
+            this.label1.Location = new System.Drawing.Point(12, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 13);
             this.label1.TabIndex = 1;
@@ -65,7 +66,7 @@ namespace Evaluacion4_Programación_1
             // 
             // txtNombreMusculo
             // 
-            this.txtNombreMusculo.Location = new System.Drawing.Point(149, 83);
+            this.txtNombreMusculo.Location = new System.Drawing.Point(15, 64);
             this.txtNombreMusculo.Name = "txtNombreMusculo";
             this.txtNombreMusculo.Size = new System.Drawing.Size(100, 20);
             this.txtNombreMusculo.TabIndex = 1;
@@ -81,7 +82,7 @@ namespace Evaluacion4_Programación_1
             // 
             // txtNúmeroAlumno
             // 
-            this.txtNúmeroAlumno.Location = new System.Drawing.Point(317, 83);
+            this.txtNúmeroAlumno.Location = new System.Drawing.Point(148, 64);
             this.txtNúmeroAlumno.Name = "txtNúmeroAlumno";
             this.txtNúmeroAlumno.Size = new System.Drawing.Size(100, 20);
             this.txtNúmeroAlumno.TabIndex = 2;
@@ -89,7 +90,7 @@ namespace Evaluacion4_Programación_1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(314, 55);
+            this.label2.Location = new System.Drawing.Point(157, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 13);
             this.label2.TabIndex = 5;
@@ -98,7 +99,7 @@ namespace Evaluacion4_Programación_1
             // btBuscar
             // 
             this.btBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBuscar.Location = new System.Drawing.Point(577, 117);
+            this.btBuscar.Location = new System.Drawing.Point(631, 117);
             this.btBuscar.Name = "btBuscar";
             this.btBuscar.Size = new System.Drawing.Size(75, 30);
             this.btBuscar.TabIndex = 8;
@@ -108,24 +109,15 @@ namespace Evaluacion4_Programación_1
             // 
             // txtCódigo
             // 
-            this.txtCódigo.Location = new System.Drawing.Point(461, 123);
+            this.txtCódigo.Location = new System.Drawing.Point(433, 123);
             this.txtCódigo.Name = "txtCódigo";
             this.txtCódigo.Size = new System.Drawing.Size(100, 20);
             this.txtCódigo.TabIndex = 9;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Código";
-            // 
             // btBorrar
             // 
             this.btBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBorrar.Location = new System.Drawing.Point(577, 83);
+            this.btBorrar.Location = new System.Drawing.Point(722, 117);
             this.btBorrar.Name = "btBorrar";
             this.btBorrar.Size = new System.Drawing.Size(75, 29);
             this.btBorrar.TabIndex = 11;
@@ -138,18 +130,35 @@ namespace Evaluacion4_Programación_1
             this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg.Location = new System.Drawing.Point(57, 175);
             this.dg.Name = "dg";
-            this.dg.Size = new System.Drawing.Size(386, 181);
+            this.dg.Size = new System.Drawing.Size(444, 181);
             this.dg.TabIndex = 12;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(280, 37);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "CondiciónAlumno";
+            // 
+            // txtCondiciónAlumno
+            // 
+            this.txtCondiciónAlumno.Location = new System.Drawing.Point(283, 63);
+            this.txtCondiciónAlumno.Name = "txtCondiciónAlumno";
+            this.txtCondiciónAlumno.Size = new System.Drawing.Size(100, 20);
+            this.txtCondiciónAlumno.TabIndex = 14;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtCondiciónAlumno);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.dg);
             this.Controls.Add(this.btBorrar);
             this.Controls.Add(this.txtCódigo);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.btBuscar);
             this.Controls.Add(this.txtNúmeroAlumno);
             this.Controls.Add(this.label2);
@@ -175,9 +184,10 @@ namespace Evaluacion4_Programación_1
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btBuscar;
         private System.Windows.Forms.TextBox txtCódigo;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btBorrar;
         private System.Windows.Forms.DataGridView dg;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtCondiciónAlumno;
     }
 }
 

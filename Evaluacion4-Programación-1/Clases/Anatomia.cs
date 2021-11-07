@@ -12,6 +12,7 @@ namespace Evaluacion4_Programación_1
         public int Id { get; set; }
         public string Musculos { get; set; }
         public int AlumnoSeleccionadoLista { get; set;}
+        public string CondiciónAlumno { get; set; }
         public bool Validar()
         {
             bool resp = false;
