@@ -8,7 +8,7 @@ namespace Evaluacion4_Programación_1
 {
     public class Anatomia
     {
-        //Se usa cada ves que adicionamos una persona.
+       
         public int Id { get; set; }
         public string Musculos { get; set; }
         public int AlumnoSeleccionadoLista { get; set;}

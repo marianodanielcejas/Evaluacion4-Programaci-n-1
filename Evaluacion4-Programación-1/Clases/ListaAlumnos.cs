@@ -40,7 +40,7 @@ namespace Evaluacion4_Programación_1
         }
 
 
-        //Metodo que recibe el objeto anatomia;
+        
         public bool UpdatePersona(Anatomia anatomia)
         {
             bool resp = anatomia.Validar();
@@ -80,8 +80,7 @@ namespace Evaluacion4_Programación_1
             }
             return resp;
         }
-        //Metodo para convertir a string.
-        //Metodo para filtrar por año minimo.
+        
         
 
         public Anatomia BuscarCodigo(int id)
@@ -101,7 +100,7 @@ namespace Evaluacion4_Programación_1
             return res;
         }
         
-        //seria el Método para borrar
+        
         public bool DeleteMuscle(Anatomia anatomia)
         {
             bool resp = false;
